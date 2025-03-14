@@ -3,6 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const protectedRoutes = require('./routes/protected'); // Adjust the path if necessary
+app.use('/api', protectedRoutes);
+
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
